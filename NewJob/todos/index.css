@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(245, 245, 245);
+}
+
+aside{
+    display: none;
+    background-color: rgb(251, 251, 251);
+    float: left;
+    height: 464px;
+    width: 292px;
+    transition: transform 0.5s ease;
+    position: fixed;
+    animation: slideOut 0.5s ease-in-out;
+}
+
+.title{
+    font-size: 24px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.subtitle{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+.source{
+    color: hsl(0, 31%, 50%);
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.line{
+    border-top: 1px dashed rgb(228, 228, 228);
+    width: 94%;
+    margin-top: 20px;
+    margin-bottom: 21px;
+}
+
+.line2{
+    border-top: 1px dashed rgb(228, 228, 228);
+    width: 94%;
+    margin-top: 53px;
+    margin-bottom: 21px;
+}
+
+.sumText{
+    background-color: rgb(241, 241, 241);
+    padding: 5%;
+    width: 93%;
+    margin-left: 10px;
+    margin-right: 20px;
+    height: 177px;
+}
+
+.actualText{
+    color: rgb(77,77,77);
+    font-size: 15px;
+    top: -19px;
+    position: relative;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    line-height: 20px;
+    margin-left: -4px;
+}
+
+.todos{
+    color: rgb(234, 215, 215);
+    text-align: center;
+    font-size:100px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.insertBox{
+    color: rgb(255,255,255);
+    width: 150px;
+    height: 150px;
+    font-size: 8em;
+    text-align: center;
+    border-radius: 15px;
+}
+
+p.jscript a{
+    float: right;
+    margin-right: 11px;
+    text-decoration: none;
+    color: hsl(0, 31%, 50%);
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+	border-top: 19px solid rgb(241, 241, 241);
+}
+.triangle-down{
+    margin-left: 221px;
+    margin-top: -6px;
+    margin-bottom: -7px; 
+}
+
+.textLink{
+    color: rgb(77,77,77);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    width: 90%;
+    margin-left: 10px;
+    line-height: 19px;
+}
+
+.textLink a{
+    text-decoration: none;
+    color: hsl(0, 31%, 50%);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.container{
+    display: flex;
+    color: rgb(255, 0, 0);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.rectangle {
+    width: 539px;
+    height: 65px;
+    background-color: rgb(254, 254, 254);
+    margin-top: 7px;
+    margin-bottom: -16px;    
+}
+.selectAll{
+    width: 100%;
+    display: flex;
+}
+
+.todoType{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 490px;
+    margin-top: 12px;
+}
+.todoType{
+    font-size: 24px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: italic;
+}
+
+.fa-sharp.fa-solid.fa-chevron-right.fa-rotate-90{
+    color: rgb(230, 230, 230);
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+::placeholder {
+    color: rgb(230, 230, 230);
+}
+
+#ul > li{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    list-style-type: none;
+    background-color: rgb(255,255,255);
+    padding: 12px 8px 12px 30px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+}
+
+
+#done{
+    animation: opaco 1s, risk;
+    animation-fill-mode: forwards; 
+}
+#notDone{
+    animation: volta 1s;
+    animation-fill-mode: forwards;
+}
+
+.checkbox{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 1px solid rgb(241, 241, 241);
+}
+.checkbox:checked{
+    border:1px solid rgb(96, 195, 176);
+    background-image: url(./checkmark.svg);
+    background-size:15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(96, 195, 176);
+}
+
+.listCheck{
+    list-style-type: none;
+}
+
+.listText{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgb(77,77,77);
+}
+
+.filters{
+    box-sizing: border-box;
+    border-top: 1px solid #e6e6e6;    
+}
+
+@keyframes slideOut {
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes opaco {
+    from{
+        opacity: 100%;
+    }to{
+        opacity: 20%;
+    }
+}
+
+@keyframes volta {
+    from{
+        opacity: 20%;
+    }to{
+        opacity: 100%;
+    }
+}
+
+@keyframes risk {
+    from{
+        text-decoration: none;
+    }to{
+        text-decoration: line-through;
+    }
+}

@@ -1,0 +1,124 @@
+body{
+    background-color: black;
+    margin: 30px;
+}
+.title{
+    color: white;
+    font-family:monospace;
+    text-align: center;
+}
+.fa-solid.fa-computer{
+    color: #9ba1ab;
+}
+.fa-solid.fa-x{
+    text-align: center;
+}
+.fa-solid.fa-person{
+    color: #9ba1ab;
+}
+
+.squares {
+    display: grid;
+    grid-template-columns: repeat(3, 20vh);
+    grid-template-rows: repeat(3, 20vh);
+    
+}
+
+#box1{
+    border-bottom: white 1px solid;
+    border-right: white 1px solid;
+}
+#box2{
+    border-bottom: white 1px solid;
+    border-right: white 1px solid;
+    border-left: white 1px solid;
+}
+#box3{
+    border-bottom: white 1px solid;
+    border-left: white 1px solid;
+}
+#box4{
+    border-top: white 1px solid;
+    border-bottom: white 1px solid;
+    border-right: white 1px solid;
+}
+#box5{
+    border-bottom: white 1px solid;
+    border-right: white 1px solid;
+    border-left: white 1px solid;
+    border-top: white 1px solid;
+}
+#box6{
+    border-bottom: white 1px solid;
+    border-left: white 1px solid;
+    border-top: white 1px solid;
+}
+#box7{
+    border-right: white 1px solid;
+    border-top: white 1px solid;
+}
+#box8{
+    border-left: white 1px solid;
+    border-right: white 1px solid;
+    border-top: white 1px solid;
+}
+#box9{
+    border-top: white 1px solid;
+    border-left: white 1px solid;
+}
+.box{
+    transition: opacity 0.3s ease-in-out;
+}
+
+.box.empty {
+    opacity: 0;
+}
+
+.squares > div {
+    padding: 10px;
+    background-color: hsl(0, 0%, 0%);
+    display: grid;
+    place-items: center;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.squares > div {
+    font-size: 24px;
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);    
+}
+.squares > div:hover{
+    opacity: 1;
+    background-color: hsl(0, 0%, 10%);
+}
+
+.squares{
+    justify-content: center;
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: hsla(0, 0%, 31%, 0.382);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 10%;
+}
+.navbar a:hover{
+    background-color: hsl(0, 0%, 31%, 0.482);
+    opacity: 1;
+}
+.navbar li{
+    display: inline-block;
+}

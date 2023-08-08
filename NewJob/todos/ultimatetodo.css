@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(245, 245, 245);
+}
+.main-todo{
+    text-align: center;
+    justify-content: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+.todo-title {
+    display: inline;
+    text-align: center;
+}
+h1{
+    display: inline;
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgb(235, 215, 215);
+    font-weight: 100;
+    font-size: 100px;
+}
+
+.container{
+    width: 550px;
+    background-color: rgb(254, 254, 254);
+    margin: 0 auto;
+    box-shadow: 2px 1px 2px #888888;
+}
+
+aside{
+    background-color: rgb(251, 251, 251);
+    display: flex;
+    float: left;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.aside-container{
+    width: 272px;
+
+}
+.aside-title{
+    margin: 10px 0;
+}
+.aside-title h3{
+    font-size: 23px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+}
+.source a{
+    color: rgb(198, 120, 123);
+    text-decoration: none;
+}
+
+.source a:hover{
+    color: rgb(154, 145, 145);
+    text-decoration: underline;
+}
+
+.add-Todo{
+    align-items: center;
+}
+.add-Todo-after{
+    align-items: center;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.todo-input{
+    border: none;
+    outline: none;
+    padding: 16px 16px 16px 60px;
+    width: 100%;
+    font-style: italic;
+    color: rgb(77, 77, 77);
+}
+.todo-item{
+    width: 100%;
+    background-color: rgb(254, 254, 254);
+}
+
+#todo-list > li{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    list-style-type: none;
+    background-color: rgb(255,255,255);
+    padding: 12px 8px 12px 5px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    color: rgb(77, 77, 77);
+}
+
+.todo-item{
+    border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.inner-todo-item{
+    display: flex;
+    gap: 20px;
+}
+
+.todo-check{
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    min-height: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    max-width: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 1px solid rgb(241, 241, 241);
+    
+}
+.todo-item.close{
+    display: flex;
+}
+
+.close{
+    color: rgb(204, 154, 154);
+    transition: 0.3s;
+}
+
+.close:hover{
+    color: hsl(0, 33%, 55%);
+}
+
+.todo-check:checked{
+    border:1px solid rgb(96, 195, 176);
+    background-image: url(./checkmark.svg);
+    background-size:15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(96, 195, 176);
+}
+
+.done-task .todo-text {
+    animation: opaco 1s, risk 1s;
+    animation-fill-mode: forwards;
+}
+
+.not-done-task{
+    animation: volta 1s;
+    animation-fill-mode: forwards;
+}
+
+.filter-container {
+    display: none;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: rgb(254, 254, 254);
+    border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.inner-filters-container{
+    width: 100%;
+}
+
+.total-items {
+    font-size: 14px;
+    float: left;
+}
+
+.filters ul {
+    list-style: none;
+    display: flex;
+    float: right;
+    gap: 10px;
+}
+.filters{
+    display: inline-flex;
+}
+.filters button {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: rgb(163, 163, 163);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.filters button:hover{
+    border: 1px solid hsl(0, 44%, 89%);
+    border-radius: 5px;
+}
+
+.filters button[value="selected"] {
+    border-color: hsl(0, 44%, 79%);
+    border-radius: 5px;
+}
+
+.total-items{
+    color: rgb(163, 163, 163);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    float: left;
+}
+
+@keyframes opaco {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 20%;
+    }
+}
+
+@keyframes risk {
+    from {
+        text-decoration: none;
+    }
+    to {
+        text-decoration: line-through;
+    }
+}
+
+@keyframes volta {
+    from{
+        opacity: 20%;
+    }to{
+        opacity: 100%;
+    }
+}

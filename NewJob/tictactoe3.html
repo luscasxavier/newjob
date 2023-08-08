@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/jpg" href="images/shrek.jpg">
+        <title>TicTacToe3</title>
+        <link rel="stylesheet" href="tictactoe3.css">
+        <script src="https://kit.fontawesome.com/a5998c514e.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <h1>Tic-Tac-Toe</h1>
+            <div class="play-area">
+                <div id="block_0" class="block"></div>
+                <div id="block_1" class="block"></div>
+                <div id="block_2" class="block"></div>
+                <div id="block_3" class="block"></div>
+                <div id="block_4" class="block"></div>
+                <div id="block_5" class="block"></div>
+                <div id="block_6" class="block"></div>
+                <div id="block_7" class="block"></div>
+                <div id="block_8" class="block"></div>
+            </div>
+            <h2 id="winner"></h2>
+            <button onclick="reset_board()">RESET BOARD</button>
+        </div>
+    </body>
+
+    <script src="app.js">
+        let play_board = ["", "", "", "", "", "", "", "", ""];
+        const board_container = document.querySelector(".play-area");
+
+        const render_board = () => {
+            board_container.innerHTML = "";
+            play_board.forEach((e, i) => {
+                board_container.innerHTML += `<div id="block_${i}" class="block" onclick="addPlayerMove(${i})">${play_board[i]}</div>`;
+                if (e == player || e == computer) {
+                    document.querySelector(`#block_${i}`).classList.add("occupied");
+                }
+            });
+        };
+
+        render_board();
+        const player = "O";
+        const computer = "X";
+
+        const addPlayerMove = e => {
+            if (play_board[e] == "") {
+                play_board[e] = player;
+                render_board();
+                addComputerMove();
+            }
+        };
+
+        const addComputerMove = () => {
+            do {
+                selected = Math.floor(Math.random() * 9);
+            } while (play_board[selected] != "");
+            play_board[selected] = computer;
+            render_board();
+        };
+
+        let boajsrd_full = false;
+        const check_board_complete = () => {
+            let flag = true;
+            play_board.forEach(element => {
+                if (element != player && element != computer) {
+                    flag = false;
+                }
+            });
+            board_full = !flag;
+        };
+
+        const game_loop = () => {
+            render_board();
+            check_board_complete();
+        };
+    </script>
+    
+</html>
